@@ -1,10 +1,15 @@
 package br.com.agoravai.amem.projeto.model;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@SQLDelete(sql = "UPDATE funcionario SET deleted = true WHERE id = ?")
+@Where(clause = "deleted = false")
 @Table(name = "funcionario")
 public class Funcionario {
 
@@ -24,6 +29,8 @@ public class Funcionario {
     @ManyToOne
     @NotNull
     private Cargo cargo;
+
+    private boolean deleted = false;
 
     public Funcionario() {
     }
