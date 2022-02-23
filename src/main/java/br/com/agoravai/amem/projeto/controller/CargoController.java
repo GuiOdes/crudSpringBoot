@@ -17,7 +17,7 @@ public class CargoController {
     }
 
     @PostMapping(path = "/novo")
-    public Cargo novo(@RequestParam Cargo cargo) {
+    public Cargo novo(@RequestBody Cargo cargo) {
         return service.novo(cargo);
     }
 

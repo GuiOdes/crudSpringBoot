@@ -17,8 +17,8 @@ public class Cargo {
     @Column(unique = true)
     private String nome;
 
-    //@OneToMany(mappedBy = "funcionario")
-    //private List<Funcionario> funcionarios;
+    @OneToMany(mappedBy = "cargo")
+    private List<Funcionario> funcionarios;
 
     public Cargo() {
 

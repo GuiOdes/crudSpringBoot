@@ -30,6 +30,16 @@ public class Funcionario {
     @NotNull
     private Cargo cargo;
 
+    private String senha;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     private boolean deleted = false;
 
     public Funcionario() {

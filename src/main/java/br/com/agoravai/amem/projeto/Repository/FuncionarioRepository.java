@@ -4,6 +4,8 @@ import br.com.agoravai.amem.projeto.model.Funcionario;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
+
 public interface FuncionarioRepository extends CrudRepository<Funcionario, Integer> {
 
     @Query(
@@ -17,4 +19,10 @@ public interface FuncionarioRepository extends CrudRepository<Funcionario, Integ
             nativeQuery = true
     )
     Iterable<FuncionarioProjecao> findFuncionarioCargo();
+
+    @Query(
+            value = "SELECT * FROM funcionario WHERE nome = ?",
+            nativeQuery = true
+    )
+    Optional<Funcionario> findFuncionarioByUsername(String nome);
 }
