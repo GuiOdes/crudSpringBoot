@@ -1,5 +1,4 @@
 package br.com.agoravai.amem.projeto;
-
 import br.com.agoravai.amem.projeto.controller.FuncionarioController;
 import br.com.agoravai.amem.projeto.model.Funcionario;
 import br.com.agoravai.amem.projeto.services.FuncionarioService;
@@ -19,7 +18,7 @@ import java.util.Arrays;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(FuncionarioController.class)
-public class FuncionarioTest {
+public class FuncionarioControllerTest {
 
     @Autowired
     MockMvc mockMvc;
