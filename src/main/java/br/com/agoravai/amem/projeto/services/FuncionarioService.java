@@ -49,4 +49,8 @@ public class FuncionarioService {
     public Iterable<FuncionarioProjecao> listaFuncionarioCargo() {
         return funcionarioRepository.findFuncionarioCargo();
     }
+
+    public boolean existsById(int id) {
+        return funcionarioRepository.existsById(id);
+    }
 }
